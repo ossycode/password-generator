@@ -1,1 +1,27 @@
 @use "../abstracts/mixins" as *;
+
+.heading__l {
+  font-family: jetbrainMono;
+  font-weight: var(--f-weight);
+  font-size: 3.2rem;
+  line-height: 4.224rem;
+  color: var(--color-almost-light);
+}
+
+.heading__m {
+  font-family: jetbrainMono;
+  font-weight: var(--f-weight);
+  font-size: 2.4rem;
+  line-height: 3.168rem;
+  color: var(--color-grey-light);
+}
+
+body {
+  font-family: jetbrainMono;
+  font-size: var(--default-f-size);
+  line-height: var(--default-l-heigth);
+  font-weight: var(--f-weight);
+  color: var(--color-almost-light);
+  text-align: center;
+  background-color: var(--color-grey-dark);
+}
