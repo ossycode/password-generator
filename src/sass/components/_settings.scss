@@ -37,6 +37,7 @@
     text-transform: uppercase;
     color: var(--color-almost-light);
     margin-right: 0.5rem;
+    transition: all 0.2s ease-in-out;
   }
 
   &__bar {
@@ -47,6 +48,7 @@
       width: 1rem;
       height: 2.8rem;
       border: 1px solid var(--color-almost-light);
+      transition: all 0.2s ease-in-out;
     }
   }
 }
