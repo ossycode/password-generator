@@ -24,3 +24,15 @@ function applyTrackColor(slider) {
   } ${percentage}%, ${sliderColors.backgroundC} ${percentage + 0.1}%)`;
   slider.style.background = bgColor;
 }
+
+// When the copy Icon is clicked
+// Copy the password to clipboard
+// Notify the user when the password is copied to the clipboard.
+
+domElem.copyBtn.addEventListener("click", (e) => {
+  const generatedPassword = domElem.passwordContainer.textContent.trim();
+  navigator.clipboard.writeText(generatedPassword);
+
+  domElem.copied.style.transform = "translateY(0%)";
+  domElem.copied.style.opacity = "1";
+});
