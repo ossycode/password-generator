@@ -22,7 +22,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./dist", "index.html"),
     }),
-    new CleanWebpackPlugin(),
   ],
   resolve: {
     extensions: ["*", ".js"],
