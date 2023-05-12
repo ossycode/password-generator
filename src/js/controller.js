@@ -23,6 +23,7 @@ init();
 domElem.slider.addEventListener("input", (event) => {
   domElem.sliderValue.textContent = event.target.value;
   applyTrackColor(event.target);
+  resetPasswordStrengthBars(domElem.passwordStrengthBars);
   showPasswordStrength(event.target.value);
 });
 
@@ -39,7 +40,6 @@ domElem.copyBtn.addEventListener("click", (e) => {
 
 // Listen for changes and update the password strength bar
 document.addEventListener("change", function () {
-  console.log(domElem.slider.value);
   showPasswordStrength(domElem.slider.value);
 });
 
@@ -51,8 +51,13 @@ domElem.GeneratePasswordBtn.addEventListener("click", function () {
     checkBoxesIsChecked();
 
   if (!lowerChecked && !upperChecked && !numberChecked && !symbolChecked) {
-    domElem.passwordContainer.textContent =
-      "Please check at least one checkbox";
+    domElem.passwordContainer.textContent = "Please check at least 1 checkbox";
+    domElem.passwordContainer.style.opacity = 0.25;
+
+    return;
+  }
+  if (+domElem.slider.value === 0) {
+    domElem.passwordContainer.textContent = "Please specify password length";
 
     return;
   }
@@ -109,6 +114,10 @@ function showPasswordStrength(value) {
   if (passwordCha >= 10 && (numberChecked || symbolChecked)) {
     updatePasswordStrength(4, "#f8cd65", "MEDIUM");
   }
+
+  if (passwordCha >= 15 && !numberChecked && !symbolChecked) {
+    updatePasswordStrength(4, "#f8cd65", "MEDIUM");
+  }
   if (passwordCha >= 15 && upperChecked && numberChecked && symbolChecked) {
     updatePasswordStrength(5, "#a4ffaf", "STRONG");
   }
@@ -116,6 +125,7 @@ function showPasswordStrength(value) {
 
 // Resetting the style of the password strength bars
 function resetPasswordStrengthBars(passwordStrengthBarsArray) {
+  domElem.passwordStrengthText.textContent = " ";
   passwordStrengthBarsArray.forEach((element) => {
     element.style.border = "2px solid #e6e5ea";
     element.style.backgroundColor = "#18171f";

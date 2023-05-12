@@ -6,6 +6,11 @@
   font-size: 3.2rem;
   line-height: 4.224rem;
   color: var(--color-almost-light);
+
+  @include respond(phone) {
+    font-size: 2.4rem;
+    line-height: 3.168rem;
+  }
 }
 
 .heading__m {
@@ -14,6 +19,12 @@
   font-size: 2.4rem;
   line-height: 3.168rem;
   color: var(--color-grey-light);
+
+  @include respond(phone) {
+    font-size: var(--default-f-size);
+    line-height: var(--default-l-heigth);
+    width: max-content;
+  }
 }
 
 body {
@@ -24,4 +35,9 @@ body {
   color: var(--color-almost-light);
   text-align: center;
   background-color: var(--color-grey-dark);
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+    line-height: 2.112rem;
+  }
 }

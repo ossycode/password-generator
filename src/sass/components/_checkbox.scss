@@ -1,10 +1,19 @@
+@use "../abstracts/mixins" as *;
+
 .checkbox-container {
   display: flex;
+
+  align-self: flex-start;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
   padding: 2.4rem 3rem;
   margin-top: 1.5rem;
+  width: 100%;
+
+  @include respond(phone) {
+    gap: 0.5rem;
+  }
 
   &__item {
     position: relative;
@@ -55,9 +64,20 @@
     position: absolute;
     display: none;
     left: 0.3rem;
+
+    @include respond(tab-port) {
+      left: 0.2rem;
+    }
+    @include respond(phone) {
+      top: 0.2rem;
+    }
   }
 }
 
 .label {
   margin-left: 1rem;
+
+  @include respond(tab-port) {
+    margin: 0;
+  }
 }

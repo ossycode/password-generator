@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,4 +7,11 @@
   justify-content: center;
   gap: 2.5rem;
   padding: 12rem;
+
+  // @include respond(tab-port) {
+  //   padding: 8rem;
+  //   gap: 2rem;
+
+  //   // padding: 0;
+  // }
 }
