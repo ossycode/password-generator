@@ -6,14 +6,14 @@ export const slider = document.querySelector(".slider");
 
 export const copyBtn = document.querySelector(".password__copy-icon");
 export const copied = document.querySelector(".password__copy-text");
-
 export const passwordContainer = document.querySelector(".password__display");
 
-// export const passwordStrengthBar1 = document.querySelector(".bar--item-1");
-// export const passwordStrengthBar2 = document.querySelector(".bar--item-2");
-// export const passwordStrengthBar3 = document.querySelector(".bar--item-3");
-// export const passwordStrengthBar4 = document.querySelector(".bar--item-4");
-
 export const passwordStrengthText = document.querySelector(".strength__text");
-
 export const passwordStrengthBars = document.querySelectorAll(".bar-item");
+
+export const uppercaseCheckEl = document.getElementById("uppercase");
+export const lowercaseCheckEl = document.getElementById("lowercase");
+export const numberCheckEl = document.getElementById("number");
+export const symbolCheckEl = document.getElementById("symbol");
+
+export const GeneratePasswordBtn = document.querySelector(".generate-btn");

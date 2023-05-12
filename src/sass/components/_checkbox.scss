@@ -44,6 +44,11 @@
   width: 2rem;
   background-color: transparent;
   border: 2px solid var(--color-almost-light);
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    border: 2px solid var(--color-green-light);
+  }
 
   &::after {
     content: url(/dist/assets/images/icon-check.svg);
